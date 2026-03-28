@@ -1,4 +1,4 @@
-# 🩺 ComfyUI Doctor
+# 🩺 ComfyUI Doctor     MAKE A BACKUP BEFORE RUNNING THIS IS VERY NEW
 
 **A universal repair, update, and launcher tool for any ComfyUI installation.**
 
