@@ -53,24 +53,23 @@ Just download the single file. No pip install needed.
 
 **Option A — place it inside your ComfyUI folder (recommended):**
 ```
-ComfyUI_Windows_portable/
-    ComfyUI/
-        comfyui_doctor.py   ← put it here
-        main.py
-        comfy/
-        custom_nodes/
-    python_standalone/
+ComfyUI/
+    comfyui_doctor.py   ← put it here
+    main.py
+    comfy/
+    custom_nodes/
+python_standalone/   ← may be a sibling folder
 ```
 
 Then run it from there:
 ```bash
-cd F:\ComfyUI_Windows_portable\ComfyUI
+cd /path/to/ComfyUI
 python comfyui_doctor.py
 ```
 
 **Option B — run it from anywhere with an explicit path:**
 ```bash
-python comfyui_doctor.py --path "F:\ComfyUI_Windows_portable\ComfyUI"
+python comfyui_doctor.py --path "/path/to/ComfyUI"
 ```
 
 ---
@@ -84,7 +83,7 @@ python comfyui_doctor.py --path "F:\ComfyUI_Windows_portable\ComfyUI"
 python comfyui_doctor.py
 
 # If auto-detect fails, point it at your ComfyUI folder explicitly
-python comfyui_doctor.py --path "F:\ComfyUI_Windows_portable\ComfyUI"
+python comfyui_doctor.py --path "/path/to/ComfyUI"
 ```
 
 ### Fix only, don't launch
@@ -137,7 +136,7 @@ A folder is recognised as ComfyUI if it contains both `main.py` and a `comfy/` s
 
 For the standard Windows portable release, the layout looks like this:
 ```
-ComfyUI_Windows_portable/
+ComfyUI_Windows_portable/   ← or any folder name
     ComfyUI/               ← comfy_root
     python_standalone/     ← Python found here automatically
 ```
@@ -275,8 +274,8 @@ Every run produces two files in `~/.comfyui_doctor_logs/`:
 ```json
 {
   "timestamp": "2026-03-26T10:26:32",
-  "comfy_root": "F:\\ComfyUI_Windows_portable\\ComfyUI",
-  "python_exe": "F:\\ComfyUI_Windows_portable\\python_standalone\\python.exe",
+  "comfy_root": "C:\\ComfyUI",
+  "python_exe": "C:\\ComfyUI\\python_standalone\\python.exe",
   "is_portable": true,
   "os": "Windows",
   "success": true,
@@ -299,7 +298,7 @@ Every run produces two files in `~/.comfyui_doctor_logs/`:
 ### First time setup / fresh portable install
 
 ```bash
-python comfyui_doctor.py --path "F:\ComfyUI_Windows_portable\ComfyUI"
+python comfyui_doctor.py --path "/path/to/ComfyUI"
 ```
 
 The doctor will verify PyTorch, install core requirements, and launch ComfyUI.
@@ -353,7 +352,7 @@ python comfyui_doctor.py --no-launch
 The auto-detection didn't find `main.py` + `comfy/` in any of its search paths. Use `--path` explicitly:
 
 ```bash
-python comfyui_doctor.py --path "F:\ComfyUI_Windows_portable\ComfyUI"
+python comfyui_doctor.py --path "/path/to/ComfyUI"
 ```
 
 ### "No portable/venv Python found — falling back to system Python"
