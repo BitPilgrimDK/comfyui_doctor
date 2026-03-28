@@ -342,9 +342,7 @@ def discover_python(comfy_root: Path) -> tuple[Optional[Path], Optional[Path]]:
     warn(
         "No portable/venv Python found next to ComfyUI — falling back to system Python."
     )
-    warn(
-        "If wrong, pass the path explicitly:  --path F:\\ComfyUI_Windows_portable\\ComfyUI"
-    )
+    warn("If wrong, pass the path explicitly:  --path /path/to/ComfyUI")
     for candidate in ["python3", "python", sys.executable]:
         resolved = shutil.which(candidate)
         if resolved:
